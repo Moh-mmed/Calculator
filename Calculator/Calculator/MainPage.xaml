@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.MainPage">
+
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="1">
+        <Label x:Name="Display_Label" FontSize="60" TextColor="White" BackgroundColor="Gray" HorizontalTextAlignment="End" HeightRequest="90" VerticalTextAlignment="End"/>
+       
+
+        <StackLayout Orientation="Horizontal" Spacing="1">
+            <Button x:Name="Button_C" Text="C" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_C_Clicked"  HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Sign" Text="+/-" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_Sign_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Percent" Text="%" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_Percent_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Div" Text="Div" FontSize="40" BackgroundColor="Orange" Clicked="Button_Div_Clicked" HorizontalOptions="FillAndExpand" Margin="0"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="1" >
+            <Button x:Name="Button_7" Text="7" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_7_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_8" Text="8" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_8_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_9" Text="9" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_9_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Mul" Text="x" FontSize="50" BackgroundColor="Orange" Clicked="Button_Mul_Clicked" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="1">
+            <Button x:Name="Button_4" Text="4" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_4_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_5" Text="5" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_5_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_6" Text="6" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_6_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Sub" Text="-" FontSize="50" BackgroundColor="Orange" Clicked="Button_Sub_Clicked" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="1">
+            <Button x:Name="Button_1" Text="1" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_1_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_2" Text="2" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_2_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_3" Text="3" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_3_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Add" Text="+" FontSize="50" BackgroundColor="Orange" Clicked="Button_Add_Clicked" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="1">
+            <Button x:Name="Button_Zero" Text="0" FontSize="50" BackgroundColor="DarkGray"  Clicked="Button_Zero_Clicked"  WidthRequest="215"/>
+            <Button x:Name="Button_Dot" Text="." FontSize="50" BackgroundColor="DarkGray" Clicked="Button_Dot_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Equal" Text="=" FontSize="50" BackgroundColor="Orange" Clicked="Button_Equal_Clicked" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
