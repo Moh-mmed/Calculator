@@ -76,14 +76,13 @@ namespace Calculator
         }
         private void press_number(String button_number)
         {
-            double curr_value = double.Parse(disp_string);
             operator_clicked = false;
  
             if (disp_string == "0" || !ongoing_flag) disp_string = "";
             if (operation_flag > 0 && !ongoing_flag) disp_string = button_number;
             else if (disp_string == "0" && (button_number == "0")) disp_string = "0";
             else disp_string += button_number;
-            if (curr_value == 0 && sign_flag) disp_string = "-"+button_number;
+            if (disp_string == "0" && sign_flag) disp_string = "-"+button_number;
             Display_Label.Text = round_string(disp_string);
             if (button_number != "0") ongoing_flag = true;
         }
