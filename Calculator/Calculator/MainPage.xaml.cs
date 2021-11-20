@@ -91,6 +91,18 @@ namespace Calculator
             ongoig_flag = 0;
 
         }
+        private void press_number(String button_number)
+        {
+            double value = double.Parse(disp_string);
+            operator_clicked = 0;
+            if (value == 0) disp_string = "";
+            if (operation_flag > 0 && ongoig_flag == 0) disp_string = button_number;
+            else if (value == 0 && (button_number == "0")) disp_string = "0";
+            else disp_string += button_number;
+
+            Display_Label.Text = disp_string;
+            ongoig_flag = 1;
+        }
 
         // Sign, equal, dot and clear
         private void Button_Sign_Clicked(object sender, EventArgs e)
@@ -161,246 +173,62 @@ namespace Calculator
         // Numbers
         private void Button_Zero_Clicked(object sender, EventArgs e)
         {
-            operator_clicked = 0;
-            if (disp_string == "0") disp_string = "";
-            //if (double.Parse(disp_string) == 0) disp_string = "0";
-            if (operation_flag > 0)
-            {
-                if (ongoig_flag == 0)
-                {
-                    disp_string = "0";
-                }
-                else
-                {
-                    //*check if there is zero
-                    if (disp_string != "0") disp_string += "0";
-                    else disp_string = "0";
-                }
-
-            }
-            else
-            {
-                if (double.Parse(disp_string) != 0) disp_string += "0";
-                else disp_string = "0";
-            }
-            Display_Label.Text = disp_string;
-            ongoig_flag = 1;
+            String button_number = Button_Zero.Text;
+            press_number(button_number);
         }
 
         private void Button_1_Clicked(object sender, EventArgs e)
         {
-            operator_clicked = 0;
-            if (disp_string == "0") disp_string = "";
-            if (operation_flag > 0)
-            {
-                if (ongoig_flag == 0)
-                {
-                    disp_string = "1";
-                }
-                else
-                {
-                    disp_string += "1";
-                }
-
-            }
-            else
-            {
-                disp_string += "1";
-            }
-            Display_Label.Text = disp_string;
-            ongoig_flag = 1;
+            String button_number = Button_1.Text;
+            press_number(button_number);
         }
 
         private void Button_2_Clicked(object sender, EventArgs e)
         {
-            operator_clicked = 0;
-            if (disp_string == "0") disp_string = "";
-            if (operation_flag > 0)
-            {
-                if (ongoig_flag == 0)
-                {
-                    disp_string = "2";
-                }
-                else
-                {
-                    disp_string += "2";
-                }
-
-            }
-            else
-            {
-                disp_string += "2";
-            }
-            Display_Label.Text = disp_string;
-            ongoig_flag = 1;
+            String button_number = Button_2.Text;
+            press_number(button_number);
         }
         
         private void Button_3_Clicked(object sender, EventArgs e)
         {
-            operator_clicked = 0;
-            if (disp_string == "0") disp_string = "";
-            if (operation_flag > 0)
-            {
-                if (ongoig_flag == 0)
-                {
-                    disp_string = "3";
-                }
-                else
-                {
-                    disp_string += "3";
-                }
-
-            }
-            else
-            {
-                disp_string += "3";
-            }
-            Display_Label.Text = disp_string;
-            ongoig_flag = 1;
+            String button_number = Button_3.Text;
+            press_number(button_number);
         }
 
         private void Button_4_Clicked(object sender, EventArgs e)
         {
-            operator_clicked = 0;
-            if (disp_string == "0") disp_string = "";
-            if (operation_flag > 0)
-            {
-                if (ongoig_flag == 0)
-                {
-                    disp_string = "4";
-                }
-                else
-                {
-                    disp_string += "4";
-                }
-
-            }
-            else
-            {
-                disp_string += "4";
-            }
-            Display_Label.Text = disp_string;
-            ongoig_flag = 1;
+            String button_number = Button_4.Text;
+            press_number(button_number);
         }
 
         private void Button_5_Clicked(object sender, EventArgs e)
         {
-            operator_clicked = 0;
-            if (disp_string == "0") disp_string = "";
-            if (operation_flag > 0)
-            {
-                if (ongoig_flag == 0)
-                {
-                    disp_string = "5";
-                }
-                else
-                {
-                    disp_string += "5";
-                }
-
-            }
-            else
-            {
-                disp_string += "5";
-            }
-            Display_Label.Text = disp_string;
-            ongoig_flag = 1;
+            String button_number = Button_5.Text;
+            press_number(button_number);
         }
 
         private void Button_6_Clicked(object sender, EventArgs e)
         {
-            operator_clicked = 0;
-            if (disp_string == "0") disp_string = "";
-            if (operation_flag > 0)
-            {
-                if (ongoig_flag == 0)
-                {
-                    disp_string = "6";
-                }
-                else
-                {
-                    disp_string += "6";
-                }
-
-            }
-            else
-            {
-                disp_string += "6";
-            }
-            Display_Label.Text = disp_string;
-            ongoig_flag = 1;
+            String button_number = Button_6.Text;
+            press_number(button_number);
         }
 
         private void Button_7_Clicked(object sender, EventArgs e)
         {
-            operator_clicked = 0;
-            if (disp_string == "0") disp_string = "";
-            if (operation_flag > 0)
-            {
-                if (ongoig_flag == 0)
-                {
-                    disp_string = "7";
-                }
-                else
-                {
-                    disp_string += "7";
-                }
-
-            }
-            else
-            {
-                disp_string += "7";
-            }
-            Display_Label.Text = disp_string;
-            ongoig_flag = 1;
+            String button_number = Button_7.Text;
+            press_number(button_number);
         }
 
         private void Button_8_Clicked(object sender, EventArgs e)
         {
-            operator_clicked = 0;
-            if (disp_string == "0") disp_string = "";
-            if (operation_flag > 0)
-            {
-                if (ongoig_flag == 0)
-                {
-                    disp_string = "8";
-                }
-                else
-                {
-                    disp_string += "8";
-                }
-
-            }
-            else
-            {
-                disp_string += "8";
-            }
-            Display_Label.Text = disp_string;
-            ongoig_flag = 1;    
+            String button_number = Button_8.Text;
+            press_number(button_number);
         }
 
         private void Button_9_Clicked(object sender, EventArgs e)
         {
-            operator_clicked = 0;
-            if (disp_string == "0") disp_string = "";
-            if (operation_flag > 0)
-            {
-                if (ongoig_flag == 0)
-                {
-                    disp_string = "9";
-                }
-                else
-                {
-                    disp_string += "9";
-                }
-
-            }
-            else
-            {
-                disp_string += "9";
-            }
-            Display_Label.Text = disp_string;
-            ongoig_flag = 1;
+            String button_number = Button_9.Text;
+            press_number(button_number);
         }
     }
 }
