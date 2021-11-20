@@ -12,8 +12,8 @@ namespace Calculator
     {
         double opr1, opr2, disp_val;
         string disp_string;
-        bool ongoing_flag, sign_flag;
-        int operation_flag, floating_point_flag, operator_clicked;
+        bool ongoing_flag, sign_flag, operator_clicked, floating_point_flag;
+        int operation_flag;
 
         public MainPage()
         {
@@ -21,18 +21,23 @@ namespace Calculator
             opr1 = 0;
             opr2 = 0;
             disp_val = 0;
-            floating_point_flag = 0;
+            floating_point_flag = false;
             operation_flag = 0;// 0 = no operation, 1=add, 2=sub, 3=mul, 4=div, 5=%
-            operator_clicked = 0;
+            operator_clicked = false;
             ongoing_flag = false;
             sign_flag = false;
             disp_string = disp_val.ToString();
             Display_Label.Text = disp_string;
         }
 
+        private String round_string(String str)
+        {
+            if (str.Length > 12) return disp_string.Remove(12);
+            return str;
+        }
         // method execute_operation to do the operation
         private void execute_operation(){
-            if (operator_clicked == 1) return; 
+            if (operator_clicked) return;
             // calculates the result in case two operands and an operation are entred
             if (operation_flag > 0)
             {
@@ -41,64 +46,46 @@ namespace Calculator
                 {
                     case 1:
                         disp_val = opr1 + opr2;
-                        opr1 = disp_val;
-                        opr2 = 0;
-                        disp_string = disp_val.ToString();
-                        Display_Label.Text = disp_string;
-                        Display_Label2.Text = disp_val.ToString();
                         break;
                     case 2:
                         disp_val = opr1 - opr2;
-                        opr1 = disp_val;
-                        opr2 = 0;
-                        disp_string = disp_val.ToString();
-                        Display_Label.Text = disp_string;
                         break;
                     case 3:
                         disp_val = opr1 * opr2;
-                        opr1 = disp_val;
-                        disp_string = disp_val.ToString();
-                        Display_Label.Text = disp_string;
                         break;
                     case 4:
                         disp_val = opr1 / opr2;
-                        opr1 = disp_val;
-                        opr2 = 0;
-                        disp_string = disp_val.ToString();
-                        Display_Label.Text = disp_string;
                         break;
                     case 5:
                         disp_val = opr1 % opr2;
-                        opr1 = disp_val;
-                        opr2 = 0;
-                        disp_string = disp_val.ToString();
-                        Display_Label.Text = disp_string;
                         break;
-
                 }
+                opr1 = disp_val;
+                opr2 = 0;
                 disp_string = disp_val.ToString();
-                Display_Label.Text = disp_string;
-                Display_Label2.Text = disp_string;
+                Display_Label.Text = round_string(disp_string);
             }
-            else double.TryParse(disp_string, out opr1);
-
-            Display_Label2.Text = opr1.ToString();
-            operator_clicked = 1;
+            else
+            {
+                double.TryParse(disp_string, out opr1); 
+            }
+            operator_clicked = true;
             ongoing_flag = false;
+            floating_point_flag = false;
             sign_flag = false;
         }
         private void press_number(String button_number)
         {
-            double prev_value = double.Parse(disp_string);
-            operator_clicked = 0;
+            double curr_value = double.Parse(disp_string);
+            operator_clicked = false;
  
-            if (prev_value == 0 || operation_flag == 0) disp_string = "";
+            if (disp_string == "0" || !ongoing_flag) disp_string = "";
             if (operation_flag > 0 && !ongoing_flag) disp_string = button_number;
-            else if (prev_value == 0 && (button_number == "0")) disp_string = "0";
+            else if (disp_string == "0" && (button_number == "0")) disp_string = "0";
             else disp_string += button_number;
-            if (prev_value == 0 && sign_flag) disp_string = "-"+button_number; 
-            Display_Label.Text = disp_string;
-            if(button_number != "0") ongoing_flag = true;
+            if (curr_value == 0 && sign_flag) disp_string = "-"+button_number;
+            Display_Label.Text = round_string(disp_string);
+            if (button_number != "0") ongoing_flag = true;
         }
 
         // Sign, equal, dot and clear
@@ -116,27 +103,34 @@ namespace Calculator
                 if (sign_flag) disp_string = disp_string.Insert(0, "-");
                 if (!sign_flag) disp_string = disp_string.Remove(0, 1);
             }
-            Display_Label.Text = disp_string;
+            Display_Label.Text = round_string(disp_string);
+            //not working woth equal yet
         }
         private void Button_Equal_Clicked(object sender, EventArgs e)
         {
             execute_operation();
-            floating_point_flag = 0;
             operation_flag = 0;// 0 = no operation, 1=add, 2=sub, 3=mul, 4=div, 5=%
+            operator_clicked = false;
         }
 
         private void Button_Dot_Clicked(object sender, EventArgs e)
         {
-
+            if (!floating_point_flag) floating_point_flag = true;
+            else return;
+            if (operator_clicked || disp_string == "0") disp_string = "0.";
+            else disp_string += ".";
+            ongoing_flag = true;
+            if (disp_string.Length > 12) return;
+            Display_Label.Text = disp_string;
         }
         private void Button_C_Clicked(object sender, EventArgs e)
         {
             opr1 = 0;
             opr2 = 0;
             disp_val = 0;
-            floating_point_flag = 0;
+            floating_point_flag = false;
             operation_flag = 0;// 0 = no operation, 1=add, 2=sub, 3=mul, 4=div, 5=%
-            operator_clicked = 0;
+            operator_clicked = false;
             ongoing_flag = false;
             sign_flag = false;
             disp_string = disp_val.ToString();
