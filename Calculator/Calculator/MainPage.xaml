@@ -8,17 +8,17 @@
         <Label x:Name="Display_Label2" FontSize="60" TextColor="White" BackgroundColor="Gray" HorizontalTextAlignment="End" HeightRequest="90" VerticalTextAlignment="End"/>
 
         <StackLayout Orientation="Horizontal" Spacing="1">
-            <Button x:Name="Button_C" Text="C" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_C_Clicked"  HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Sign" Text="+/-" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_Sign_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Percent" Text="%" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_Percent_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Div" Text="Div" FontSize="40" BackgroundColor="Orange" Clicked="Button_Div_Clicked" HorizontalOptions="FillAndExpand" Margin="0"/>
+            <Button x:Name="Button_C" Text="c" FontSize="40" BackgroundColor="DarkGray" Clicked="Button_C_Clicked"  HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Sign" Text="+/-" FontSize="40" BackgroundColor="DarkGray" Clicked="Button_Sign_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Percent" Text="%" FontSize="40" BackgroundColor="DarkGray" Clicked="Button_Percent_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Div" Text="÷" FontSize="50" BackgroundColor="Orange" Clicked="Button_Div_Clicked" HorizontalOptions="FillAndExpand" Margin="0"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Spacing="1" >
             <Button x:Name="Button_7" Text="7" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_7_Clicked" HorizontalOptions="FillAndExpand"/>
             <Button x:Name="Button_8" Text="8" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_8_Clicked" HorizontalOptions="FillAndExpand"/>
             <Button x:Name="Button_9" Text="9" FontSize="50" BackgroundColor="DarkGray" Clicked="Button_9_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Mul" Text="x" FontSize="50" BackgroundColor="Orange" Clicked="Button_Mul_Clicked" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_Mul" Text="x" FontSize="40" BackgroundColor="Orange" Clicked="Button_Mul_Clicked" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Spacing="1">
