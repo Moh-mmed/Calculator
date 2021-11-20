@@ -12,7 +12,8 @@ namespace Calculator
     {
         double opr1, opr2, disp_val;
         string disp_string;
-        int operation_flag, floating_point_flag, ongoig_flag, operator_clicked;
+        bool ongoing_flag, sign_flag;
+        int operation_flag, floating_point_flag, operator_clicked;
 
         public MainPage()
         {
@@ -23,19 +24,15 @@ namespace Calculator
             floating_point_flag = 0;
             operation_flag = 0;// 0 = no operation, 1=add, 2=sub, 3=mul, 4=div, 5=%
             operator_clicked = 0;
-            ongoig_flag = 0;
+            ongoing_flag = false;
+            sign_flag = false;
             disp_string = disp_val.ToString();
             Display_Label.Text = disp_string;
-            //double.TryParse(disp_string, out disp_val);
         }
 
         // method execute_operation to do the operation
         private void execute_operation(){
-            if (operator_clicked == 1)
-            {
-                operation_flag = 1;
-                return;
-            }
+            if (operator_clicked == 1) return; 
             // calculates the result in case two operands and an operation are entred
             if (operation_flag > 0)
             {
@@ -45,6 +42,7 @@ namespace Calculator
                     case 1:
                         disp_val = opr1 + opr2;
                         opr1 = disp_val;
+                        opr2 = 0;
                         disp_string = disp_val.ToString();
                         Display_Label.Text = disp_string;
                         Display_Label2.Text = disp_val.ToString();
@@ -82,42 +80,49 @@ namespace Calculator
                 Display_Label.Text = disp_string;
                 Display_Label2.Text = disp_string;
             }
-            else
-            {
-                double.TryParse(disp_string, out opr1);
-            }
+            else double.TryParse(disp_string, out opr1);
+
             Display_Label2.Text = opr1.ToString();
             operator_clicked = 1;
-            ongoig_flag = 0;
-
+            ongoing_flag = false;
+            sign_flag = false;
         }
         private void press_number(String button_number)
         {
-            double value = double.Parse(disp_string);
+            double prev_value = double.Parse(disp_string);
             operator_clicked = 0;
-            if (value == 0) disp_string = "";
-            if (operation_flag > 0 && ongoig_flag == 0) disp_string = button_number;
-            else if (value == 0 && (button_number == "0")) disp_string = "0";
+ 
+            if (prev_value == 0 || operation_flag == 0) disp_string = "";
+            if (operation_flag > 0 && !ongoing_flag) disp_string = button_number;
+            else if (prev_value == 0 && (button_number == "0")) disp_string = "0";
             else disp_string += button_number;
-
+            if (prev_value == 0 && sign_flag) disp_string = "-"+button_number; 
             Display_Label.Text = disp_string;
-            ongoig_flag = 1;
+            if(button_number != "0") ongoing_flag = true;
         }
 
         // Sign, equal, dot and clear
         private void Button_Sign_Clicked(object sender, EventArgs e)
         {
-
+            sign_flag = !sign_flag;
+          
+            if (operation_flag > 0 && !ongoing_flag)
+            {
+                if (sign_flag) disp_string = "-0";
+                if (!sign_flag) disp_string = "0";
+            }
+            else
+            {
+                if (sign_flag) disp_string = disp_string.Insert(0, "-");
+                if (!sign_flag) disp_string = disp_string.Remove(0, 1);
+            }
+            Display_Label.Text = disp_string;
         }
         private void Button_Equal_Clicked(object sender, EventArgs e)
         {
-            double.TryParse(disp_string, out opr2);
-            if (operation_flag == 10) disp_val = opr1 + opr2;
-            else if (operation_flag == 20) disp_val = opr1 - opr2;
-
-            disp_string = disp_val.ToString();
-            Display_Label.Text = disp_string;
-            operation_flag = 0;
+            execute_operation();
+            floating_point_flag = 0;
+            operation_flag = 0;// 0 = no operation, 1=add, 2=sub, 3=mul, 4=div, 5=%
         }
 
         private void Button_Dot_Clicked(object sender, EventArgs e)
@@ -132,12 +137,13 @@ namespace Calculator
             floating_point_flag = 0;
             operation_flag = 0;// 0 = no operation, 1=add, 2=sub, 3=mul, 4=div, 5=%
             operator_clicked = 0;
-            ongoig_flag = 0;
+            ongoing_flag = false;
+            sign_flag = false;
             disp_string = disp_val.ToString();
             Display_Label.Text = disp_string;
         }
 
-       
+    
         // Operators: 
         private void Button_Add_Clicked(object sender, EventArgs e)
         {
