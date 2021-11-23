@@ -29,7 +29,6 @@ namespace Calculator
             disp_string = disp_val.ToString();
             Display_Label.Text = disp_string;
         }
-
         private String round_string(String str)
         {
             if (str.Length > 12) return disp_string.Remove(12);
@@ -111,7 +110,6 @@ namespace Calculator
             operation_flag = 0;// 0 = no operation, 1=add, 2=sub, 3=mul, 4=div, 5=%
             operator_clicked = false;
         }
-
         private void Button_Dot_Clicked(object sender, EventArgs e)
         {
             if (!floating_point_flag) floating_point_flag = true;
@@ -135,7 +133,6 @@ namespace Calculator
             disp_string = disp_val.ToString();
             Display_Label.Text = disp_string;
         }
-
     
         // Operators: 
         private void Button_Add_Clicked(object sender, EventArgs e)
@@ -143,25 +140,21 @@ namespace Calculator
             execute_operation();
             operation_flag = 1;
         }
-
         private void Button_Sub_Clicked(object sender, EventArgs e)
         {
             execute_operation();
             operation_flag = 2;
         }
-
         private void Button_Mul_Clicked(object sender, EventArgs e)
         {
             execute_operation();
             operation_flag = 3;
         }
-
         private void Button_Div_Clicked(object sender, EventArgs e)
         {
             execute_operation();
             operation_flag = 4;
         }
-
         private void Button_Percent_Clicked(object sender, EventArgs e)
         {
             execute_operation();
@@ -175,55 +168,46 @@ namespace Calculator
             String button_number = Button_Zero.Text;
             press_number(button_number);
         }
-
         private void Button_1_Clicked(object sender, EventArgs e)
         {
             String button_number = Button_1.Text;
             press_number(button_number);
         }
-
         private void Button_2_Clicked(object sender, EventArgs e)
         {
             String button_number = Button_2.Text;
             press_number(button_number);
-        }
-        
+        }        
         private void Button_3_Clicked(object sender, EventArgs e)
         {
             String button_number = Button_3.Text;
             press_number(button_number);
         }
-
         private void Button_4_Clicked(object sender, EventArgs e)
         {
             String button_number = Button_4.Text;
             press_number(button_number);
         }
-
         private void Button_5_Clicked(object sender, EventArgs e)
         {
             String button_number = Button_5.Text;
             press_number(button_number);
         }
-
         private void Button_6_Clicked(object sender, EventArgs e)
         {
             String button_number = Button_6.Text;
             press_number(button_number);
         }
-
         private void Button_7_Clicked(object sender, EventArgs e)
         {
             String button_number = Button_7.Text;
             press_number(button_number);
         }
-
         private void Button_8_Clicked(object sender, EventArgs e)
         {
             String button_number = Button_8.Text;
             press_number(button_number);
         }
-
         private void Button_9_Clicked(object sender, EventArgs e)
         {
             String button_number = Button_9.Text;

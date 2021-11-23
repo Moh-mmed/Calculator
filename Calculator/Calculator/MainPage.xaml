@@ -3,8 +3,82 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.MainPage">
 
-    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="#222" Padding="5">
-        <Label x:Name="Display_Label" FontSize="60" TextColor="White" HorizontalTextAlignment="End" HeightRequest="400" VerticalTextAlignment="End"/>
+    <StackLayout Orientation="Vertical" Padding="5"  Spacing="0" BackgroundColor="#222" >
+
+        <Grid>
+            <!-- We have only one label -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="350"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/> 
+            </Grid.ColumnDefinitions>
+            <Label x:Name="Display_Label" FontSize="60" TextColor="white" HorizontalTextAlignment="End" VerticalTextAlignment="End" />
+        </Grid>
+   
+        <Grid RowSpacing="0" >
+            <!-- We have four elements -->
+            <Grid.RowDefinitions >
+                <RowDefinition Height="80" />
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+          
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Button_C" Text="c" FontSize="40" TextColor="#fd4900" BackgroundColor="Transparent" Clicked="Button_C_Clicked" Grid.Row="0" Grid.Column="0"/>
+            <Button x:Name="Button_Sign" Text="+/-" FontSize="40" TextColor="#fd4900" BackgroundColor="Transparent" Clicked="Button_Sign_Clicked" Grid.Row="0" Grid.Column="1"/>
+            <Button x:Name="Button_Percent" Text="%" FontSize="40" TextColor="#fd4900" BackgroundColor="Transparent" Clicked="Button_Percent_Clicked" Grid.Row="0" Grid.Column="2"/>
+            <Button x:Name="Button_Div" Text="÷" FontSize="50" TextColor="#fd4900" BackgroundColor="Transparent" Clicked="Button_Div_Clicked" Grid.Row="0" Grid.Column="3"/>
+           
+            <Button x:Name="Button_7" Text="7" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_7_Clicked" Grid.Row="1" Grid.Column="0"/>
+            <Button x:Name="Button_8" Text="8" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_8_Clicked" Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="Button_9" Text="9" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_9_Clicked" Grid.Row="1" Grid.Column="2"/>
+            <Button x:Name="Button_Mul" Text="x" FontSize="40" TextColor="#fd4900" BackgroundColor="Transparent" Clicked="Button_Mul_Clicked" Grid.Row="1" Grid.Column="3"/>
+
+
+            <Button x:Name="Button_4" Text="4" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_4_Clicked" Grid.Row="2" Grid.Column="0"/>
+            <Button x:Name="Button_5" Text="5" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_5_Clicked" Grid.Row="2" Grid.Column="1"/>
+            <Button x:Name="Button_6" Text="6" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_6_Clicked" Grid.Row="2" Grid.Column="2"/>
+            <Button x:Name="Button_Sub" Text="-" FontSize="80" TextColor="#fd4900" BackgroundColor="Transparent" Clicked="Button_Sub_Clicked" Grid.Row="2" Grid.Column="3"/>
+
+            <Button x:Name="Button_1" Text="1" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_1_Clicked" Grid.Row="3" Grid.Column="0"/>
+            <Button x:Name="Button_2" Text="2" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_2_Clicked" Grid.Row="3" Grid.Column="1"/>
+            <Button x:Name="Button_3" Text="3" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_3_Clicked" Grid.Row="3" Grid.Column="2"/>
+            <Button x:Name="Button_Add" Text="+" FontSize="50" TextColor="#fd4900" BackgroundColor="Transparent" Clicked="Button_Add_Clicked" Grid.Row="3" Grid.Column="3"/>
+      
+        </Grid>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Button_Zero" Text="0" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_Zero_Clicked"  Grid.Row="0" Grid.Column="0"/>
+            <Button x:Name="Button_Dot" Text="." FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_Dot_Clicked" Grid.Row="0" Grid.Column="1"/>
+            <Button x:Name="Button_Equal" Text="=" FontSize="62" TextColor="White" BackgroundColor="#fd4900" CornerRadius="50" Padding="10" BorderColor="#222" Clicked="Button_Equal_Clicked" Grid.Row="0" Grid.Column="2" />
+        </Grid>
+
+
+    </StackLayout>
+        <!--
+
+
+       
+    <Label x:Name="Display_Label" FontSize="60" TextColor="White" HorizontalTextAlignment="End" HeightRequest="400" VerticalTextAlignment="End"/>
        
         <StackLayout Orientation="Horizontal">
             <Button x:Name="Button_C" Text="c" FontSize="40" TextColor="#fd4900" BackgroundColor="Transparent" Clicked="Button_C_Clicked"  HorizontalOptions="FillAndExpand"/>
@@ -39,6 +113,8 @@
             <Button x:Name="Button_Dot" Text="." FontSize="50" TextColor="White" BackgroundColor="Transparent"  Clicked="Button_Dot_Clicked" HorizontalOptions="FillAndExpand"/>
             <Button x:Name="Button_Equal" Text="=" FontSize="62" TextColor="White" BackgroundColor="#fd4900" CornerRadius="50" Padding="10" BorderColor="#222" Clicked="Button_Equal_Clicked" HorizontalOptions="FillAndExpand" />
         </StackLayout>
-    </StackLayout>
+        -->
+       
+    
 
 </ContentPage>
