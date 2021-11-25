@@ -6,7 +6,7 @@
     <StackLayout Orientation="Vertical" Padding="5"  Spacing="0" BackgroundColor="#222" >
 
         <Grid>
-            <!-- We have only one label -->
+            <?-- We have only one label ?>
             <Grid.RowDefinitions>
                 <RowDefinition Height="350"/>
             </Grid.RowDefinitions>
@@ -74,47 +74,5 @@
 
 
     </StackLayout>
-        <!--
-
-
-       
-    <Label x:Name="Display_Label" FontSize="60" TextColor="White" HorizontalTextAlignment="End" HeightRequest="400" VerticalTextAlignment="End"/>
-       
-        <StackLayout Orientation="Horizontal">
-            <Button x:Name="Button_C" Text="c" FontSize="40" TextColor="#fd4900" BackgroundColor="Transparent" Clicked="Button_C_Clicked"  HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Sign" Text="+/-" TextColor="#fd4900" FontSize="40" BackgroundColor="Transparent" Clicked="Button_Sign_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Percent" Text="%" TextColor="#fd4900" FontSize="40" BackgroundColor="Transparent"  Clicked="Button_Percent_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Div" Text="÷" TextColor="#fd4900" FontSize="50" BackgroundColor="Transparent"  Clicked="Button_Div_Clicked" HorizontalOptions="FillAndExpand" Margin="0"/>
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal" Spacing="0" >
-            <Button x:Name="Button_7" Text="7" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_7_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_8" Text="8" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_8_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_9" Text="9" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_9_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Mul" Text="x" TextColor="#fd4900" FontSize="40" BackgroundColor="Transparent" Clicked="Button_Mul_Clicked" HorizontalOptions="FillAndExpand"/>
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal" Spacing="0">
-            <Button x:Name="Button_4" Text="4" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_4_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_5" Text="5" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_5_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_6" Text="6" FontSize="50" TextColor="White" BackgroundColor="Transparent"  Clicked="Button_6_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Sub" Text="-" FontSize="80" TextColor="#fd4900"  BackgroundColor="Transparent"  Clicked="Button_Sub_Clicked" HorizontalOptions="FillAndExpand"/>
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal" Spacing="0">
-            <Button x:Name="Button_1" Text="1" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_1_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_2" Text="2" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_2_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_3" Text="3" FontSize="50" TextColor="White" BackgroundColor="Transparent"  Clicked="Button_3_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Add" Text="+" FontSize="50" TextColor="#fd4900" BackgroundColor="Transparent" Clicked="Button_Add_Clicked" HorizontalOptions="FillAndExpand"/>
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal" Spacing="0">
-            <Button x:Name="Button_Zero" Text="0" FontSize="50" TextColor="White" BackgroundColor="Transparent" Clicked="Button_Zero_Clicked"  WidthRequest="215"/>
-            <Button x:Name="Button_Dot" Text="." FontSize="50" TextColor="White" BackgroundColor="Transparent"  Clicked="Button_Dot_Clicked" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="Button_Equal" Text="=" FontSize="62" TextColor="White" BackgroundColor="#fd4900" CornerRadius="50" Padding="10" BorderColor="#222" Clicked="Button_Equal_Clicked" HorizontalOptions="FillAndExpand" />
-        </StackLayout>
-        -->
-       
-    
-
+      
 </ContentPage>
